@@ -1,0 +1,4 @@
+﻿UserControl "SampleData.Loader" {
+	Background: White
+	TestControl { }
+}

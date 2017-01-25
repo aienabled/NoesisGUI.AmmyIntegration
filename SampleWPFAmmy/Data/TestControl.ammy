@@ -1,0 +1,34 @@
+﻿UserControl "SampleData.TestControl" {
+	Resources: [
+		Style {
+			TargetType: TextBlock
+			#Setter("Foreground", "Blue")
+			#Setter("FontSize", 24)
+			#Setter("FontWeight", "Bold")
+			Triggers: [ 
+				@Trigger("IsMouseOver", "True") {
+					 #Setter("Foreground", "Red")
+				}
+			]
+		}
+	]
+
+	StackPanel { 
+		Orientation: Vertical
+		HorizontalAlignment: Center
+		VerticalAlignment: Center
+		
+		TextBlock {
+			Text: "Ammy works! Noesis works! Hallelujah!"
+			HorizontalAlignment: Center			
+		}
+
+		TextBlock {
+			Text: "(you can edit Ammy code to trigger NoesisGUI reloading)"
+			HorizontalAlignment: Center
+			VerticalAlignment: Center,
+			FontSize: 16,
+			Margin: "0,10,0,0"
+		}		
+	}
+}

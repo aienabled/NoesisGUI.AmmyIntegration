@@ -1,0 +1,3 @@
+[submodule "AmmyBackend"]
+	path = AmmyBackend
+	url = https://github.com/AmmyUI/Backend

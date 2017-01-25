@@ -1,0 +1,31 @@
+#Folders
+Library/
+Temp/
+Builds/
+obj/
+bin/
+
+*.suo
+*.user
+*.userprefs
+*.pidb
+
+#OS Junk
+Thumbs.db
+.DS_Store*
+ehthumbs.db
+Icon7
+
+/.project
+
+*.psess
+*.vsp
+*.opensdf
+*.sdf
+
+*.tmp
+
+/packages
+
+/NoesisGUI-SDK/*
+!/NoesisGUI-SDK/Extract NoesisGUI v1.3 SDK here.txt
