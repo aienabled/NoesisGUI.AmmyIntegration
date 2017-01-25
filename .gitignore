@@ -29,3 +29,6 @@ Icon7
 
 /NoesisGUI-SDK/*
 !/NoesisGUI-SDK/Extract NoesisGUI v1.3 SDK here.txt
+
+*.g.xaml
+*.DotSettings
