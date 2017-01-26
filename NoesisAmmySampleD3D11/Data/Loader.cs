@@ -10,7 +10,7 @@ namespace SampleData
 	{
 		public Loader()
 		{
-			GUI.LoadComponent(this, "Loader.g.xaml");
+			GUI.LoadComponent(this, "Loader.xaml");
 		}
 	}
 }

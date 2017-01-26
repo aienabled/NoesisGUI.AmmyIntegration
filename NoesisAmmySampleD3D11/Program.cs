@@ -3,11 +3,13 @@
 	#region
 
 	using System;
+	using System.Collections.Generic;
 	using System.IO;
 	using System.Windows.Forms;
 	using IntegrationSampleDX11.NoesisHelpers;
 	using IntegrationSampleDX11.SharpDX;
 	using Noesis;
+	using NoesisAmmyBackend;
 	using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 	using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 	using View = Noesis.View;
@@ -35,6 +37,10 @@
 		private static FileSystemWatcher fileWatcher;
 
 		private static bool isRequiredToReloadNoesisGUI;
+
+		private static string ammyDataPath;
+
+		private static string xamlDataPath;
 
 		private static void LogError(string msg)
 		{
@@ -212,9 +218,15 @@
 
 		private static void Run()
 		{
-			var ammyDataPath = System.IO.Path.Combine(
-				Environment.CurrentDirectory, 
-				@"..\..\..\SampleWPFAmmy\Data");
+			ammyDataPath =
+				System.IO.Path.GetFullPath(
+					System.IO.Path.Combine(
+						Environment.CurrentDirectory,
+						@"..\..\..\SampleWPFAmmy\Data"));
+
+			xamlDataPath = System.IO.Path.Combine(
+				System.IO.Path.GetRandomFileName(),
+				System.IO.Path.DirectorySeparatorChar.ToString());
 
 			// Prepare and run D3D11 wrapper
 			var configuration = new DemoConfiguration("NoesisGUI Ammy Integration Sample", 800, 600);
@@ -227,7 +239,7 @@
 					// Callback for initialization
 					GUI.Init();
 
-					GUI.SetResourceProvider(ammyDataPath);
+					GUI.SetResourceProvider(xamlDataPath);
 
 					// Global theme
 					{
@@ -252,13 +264,13 @@
 					dxWrapper.KeyUpEvent += OnKeyUp;
 					dxWrapper.KeyPressEvent += OnKeyPress;
 
-					StartFileWatcher(ammyDataPath);
+					StartFileWatcher();
 
 					isRunning = true;
 				});
 		}
 
-		private static void StartFileWatcher(string ammyDataPath)
+		private static void StartFileWatcher()
 		{
 			fileWatcher = new FileSystemWatcher(ammyDataPath) { IncludeSubdirectories = true };
 
@@ -272,9 +284,25 @@
 
 		private static void ReloadNoesisGUIView()
 		{
+			// create new ammy backed
+			var ammyBackend = new NoesisAmmyBackend();
+			// collect file paths for compilation
+			var sourceFilePaths = CollectAmmyFilePaths(ammyDataPath);
+
+			try
+			{
+				// compile .ammy->XAML
+				ammyBackend.TriggerCompilation(ammyDataPath, sourceFilePaths, xamlDataPath);
+			}
+			catch (Exception ex)
+			{
+				LogError("Error during Ammy compilation: " + ex + Environment.NewLine + ex.StackTrace);
+				return;
+			}
+
 			// destroy old view renderer
 			renderer?.Shutdown();
-
+			
 			// create new view
 			var loader = new SampleData.Loader();
 			var content = loader;
@@ -288,6 +316,11 @@
 			isRequiredToReloadNoesisGUI = false;
 
 			OnResize(dxWrapper.Size.Width, dxWrapper.Size.Height);
+		}
+
+		private static IReadOnlyList<string> CollectAmmyFilePaths(string rootPath)
+		{
+			return Directory.GetFiles(rootPath, "*.ammy", SearchOption.AllDirectories);
 		}
 	}
 }

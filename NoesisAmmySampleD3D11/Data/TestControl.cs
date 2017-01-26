@@ -14,7 +14,7 @@ namespace SampleData
 	{
 		public TestControl()
 		{
-			GUI.LoadComponent(this, "TestControl.g.xaml");
+			GUI.LoadComponent(this, "TestControl.xaml");
 		}
 	}
 }

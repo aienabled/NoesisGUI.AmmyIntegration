@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IntegrationSampleDX11</RootNamespace>
     <AssemblyName>IntegrationSampleDX11</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -56,10 +56,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ammy.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ammy.Host.1.0.2\lib\net40\Ammy.Host.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="NoesisManaged">
       <HintPath>..\NoesisGUI-SDK\Bin\NoesisManaged.dll</HintPath>
     </Reference>
@@ -100,7 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoesisAmmyBackend\NoesisAmmyBackend.csproj">
+      <Project>{8635366C-2AFF-4BA7-B4D8-DE6682C37099}</Project>
+      <Name>NoesisAmmyBackend</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
