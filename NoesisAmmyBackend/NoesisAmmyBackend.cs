@@ -23,8 +23,7 @@
 		public string[] DefaultNamespaces => new[] { "Noesis" };
 
 		public bool NeedRuntimeUpdate => false;
-
-		public TypeNames TypeNames => NoesisTypeNames.Instance;
+	    public PlatformTypeNames PlatformTypeNames => NoesisTypeNames.Instance;
 
 		public Type[] ProvideTypes()
 		{
@@ -59,7 +58,7 @@
 
 		private static string FormatMessage(CompilerMessage m)
 		{
-			return $"[{m.Type}] {m.Message}{Environment.NewLine}    at {m.Location.Filename}:{m.Location.Column}";
+			return $"[{m.Type}] {m.Message}{Environment.NewLine}    at {m.Location.Filename}:({m.Location.Row},{m.Location.Column})";
 		}
 
 		private void GenerateFiles(OutputFile[] files, string rootPath, string outputDataPath)
@@ -73,7 +72,7 @@
 
 			foreach (var file in files)
 			{
-				var path = file.Filename;
+				var path = file.FullPath;
 				var localFilePath = path.Substring(rootPath.Length, rootPath.Length - ".ammy".Length)
 				                    + ".xaml";
 

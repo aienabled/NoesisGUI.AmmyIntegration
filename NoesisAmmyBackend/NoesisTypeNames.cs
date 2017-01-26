@@ -6,7 +6,7 @@ namespace NoesisAmmyBackend
 
 	#endregion
 
-	internal class NoesisTypeNames : TypeNames
+	internal class NoesisTypeNames : PlatformTypeNames
 	{
 		public static readonly NoesisTypeNames Instance = new NoesisTypeNames();
 
@@ -16,21 +16,23 @@ namespace NoesisAmmyBackend
 
 		public override string Brushes => "Noesis.Brushes";
 
-		public override string DashStyles => "Noesis.DashStyles";
+		//public override string DashStyles => "Noesis.DashStyles";
 
 		public override string DependencyObject => "Noesis.DependencyObject";
 
 		public override string DependencyProperty => "Noesis.DependencyProperty";
 
-		public override string FontStretches => "Noesis.FontStretches";
+		public override string RoutedEvent => "Noesis.RoutedEvent";
 
-		public override string FontStyles => "Noesis.FontStyles";
+		public override string FontStretches => "Noesis.FontStretch";
 
-		public override string FontWeights => "Noesis.FontWeights";
+		public override string FontStyles => "Noesis.FontStyle";
+
+		public override string FontWeights => "Noesis.FontWeight";
 
 		public override string FrameworkElement => "Noesis.FrameworkElement";
 
-		public override string ICommand => "Noesis.Input.ICommand";
+		//public override string ICommand => "Noesis.Input.ICommand";
 
 		public override string ResourceDictionary => "Noesis.ResourceDictionary";
 
@@ -38,7 +40,7 @@ namespace NoesisAmmyBackend
 
 		public override string Style => "Noesis.Style";
 
-		public override string TextDecorations => "Noesis.TextDecorations";
+		//public override string TextDecorations => "Noesis.TextDecorations";
 
 		public override string Thickness => "Noesis.Thickness";
 
