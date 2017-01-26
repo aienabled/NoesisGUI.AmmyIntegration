@@ -222,11 +222,13 @@
 				System.IO.Path.GetFullPath(
 					System.IO.Path.Combine(
 						Environment.CurrentDirectory,
-						@"..\..\..\SampleWPFAmmy\Data"));
+						@"..\..\..\SampleWPFAmmy\Data"))
+				+ System.IO.Path.DirectorySeparatorChar;
 
 			xamlDataPath = System.IO.Path.Combine(
-				System.IO.Path.GetRandomFileName(),
-				System.IO.Path.DirectorySeparatorChar.ToString());
+				               System.IO.Path.GetTempPath(),
+				               System.IO.Path.GetRandomFileName())
+			               + System.IO.Path.DirectorySeparatorChar;
 
 			// Prepare and run D3D11 wrapper
 			var configuration = new DemoConfiguration("NoesisGUI Ammy Integration Sample", 800, 600);

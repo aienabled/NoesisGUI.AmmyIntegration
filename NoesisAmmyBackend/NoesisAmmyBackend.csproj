@@ -31,12 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ammy.BackendCommon">
-      <HintPath>..\packages\Ammy.Host.1.0.5\lib\net40\Ammy.BackendCommon.dll</HintPath>
+    <Reference Include="Ammy.BackendCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6fc39a3cff252756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ammy.Host.1.0.6\lib\net40\Ammy.BackendCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ammy.Host">
-      <HintPath>..\packages\Ammy.Host.1.0.5\lib\net40\Ammy.Host.dll</HintPath>
+    <Reference Include="Ammy.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ammy.Host.1.0.6\lib\net40\Ammy.Host.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

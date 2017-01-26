@@ -73,7 +73,7 @@
 			foreach (var file in files)
 			{
 				var path = file.FullPath;
-				var localFilePath = path.Substring(rootPath.Length, rootPath.Length - ".ammy".Length)
+				var localFilePath = path.Substring(rootPath.Length, path.Length - rootPath.Length - ".ammy".Length)
 				                    + ".xaml";
 
 				var outputFilePath = Path.Combine(outputDataPath, localFilePath);
