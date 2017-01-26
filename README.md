@@ -1,6 +1,3 @@
-WIP - doesn't work yet!
-=============
-
 NoesisGUI Ammy Integration
 =============
 This library provides solution for integration [NoesisGUI v1.3+](http://noesisengine.com) with [Ammy](http://ammyui.com) library.

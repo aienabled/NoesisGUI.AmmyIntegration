@@ -291,6 +291,8 @@
 			// collect file paths for compilation
 			var sourceFilePaths = CollectAmmyFilePaths(ammyDataPath);
 
+			Console.WriteLine("Rebuilding .ammy files: " + Environment.NewLine + string.Join(Environment.NewLine, sourceFilePaths));
+
 			try
 			{
 				// compile .ammy->XAML
@@ -301,6 +303,8 @@
 				LogError("Error during Ammy compilation: " + ex + Environment.NewLine + ex.StackTrace);
 				return;
 			}
+
+			Console.WriteLine("Rebuilding .ammy files completed successfully!");
 
 			// destroy old view renderer
 			renderer?.Shutdown();
