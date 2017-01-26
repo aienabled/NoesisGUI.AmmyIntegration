@@ -28,11 +28,11 @@ Installation
 
 Sample project notes
 -----
-It uses a very simple and unreliable mechanism of listening to the file system changes to reload NoesisGUI when any `.ammy` file modified. It's simply a proof-of-concept and will crash often.
+It uses a very simple and unreliable mechanism of listening to the file system changes to reload NoesisGUI when any `.ammy` file is modified. It's simply a proof-of-concept and will crash often.
 
 Dependencies
 -----
-Ammy depends on .NET Framework 4.5. Also it depends on [Nemerle](http://nemerle.com) and [Nitra](https://github.com/rsdn/nitra). It's expected to work properly on Windows, have not tested on other OSes yet but it might work fine under fresh version of Mono.
+Ammy depends on .NET Framework 4.5. Also it depends on [Nemerle](http://nemerle.com) and [Nitra](https://github.com/rsdn/nitra) (both are .NET 4.5 assemblies). It's expected to work properly on Windows, have not tested on other OSes yet but it might work fine under fresh version of Mono.
 
 Contributing
 -----
