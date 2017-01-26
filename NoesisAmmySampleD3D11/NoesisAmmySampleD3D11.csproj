@@ -56,6 +56,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ammy.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ammy.Host.1.0.2\lib\net40\Ammy.Host.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NoesisManaged">
       <HintPath>..\NoesisGUI-SDK\Bin\NoesisManaged.dll</HintPath>
     </Reference>
@@ -96,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
