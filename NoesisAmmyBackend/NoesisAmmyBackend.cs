@@ -34,7 +34,19 @@
 
 			var compilationRequest = new CompilationRequest(sources);
 
-			Compiler.Compile(compilationRequest);
+			var result = Compiler.Compile(compilationRequest);
+
+			if (result.IsSuccess)
+				GenerateFiles(result.Files);
+
+			var messages = result.CompilerMessages;
+		}
+
+		private void GenerateFiles(OutputFile[] files)
+		{
+			foreach (var outputFile in files) {
+		
+			}
 		}
 	}
 }
