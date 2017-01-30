@@ -9,7 +9,6 @@
 	using IntegrationSampleDX11.NoesisHelpers;
 	using IntegrationSampleDX11.SharpDX;
 	using Noesis;
-	using NoesisAmmyBackend;
 	using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 	using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 	using View = Noesis.View;
@@ -287,7 +286,7 @@
 		private static void ReloadNoesisGUIView()
 		{
 			// create new ammy backed
-			var ammyBackend = new NoesisAmmyBackend();
+			var ammyPlatform = new NoesisAmmyPlatform.NoesisAmmyPlatform();
 			// collect file paths for compilation
 			var sourceFilePaths = CollectAmmyFilePaths(ammyDataPath);
 
@@ -296,7 +295,7 @@
 			try
 			{
 				// compile .ammy->XAML
-				ammyBackend.TriggerCompilation(ammyDataPath, sourceFilePaths, xamlDataPath);
+				ammyPlatform.TriggerCompilation(ammyDataPath, sourceFilePaths, xamlDataPath);
 			}
 			catch (Exception ex)
 			{

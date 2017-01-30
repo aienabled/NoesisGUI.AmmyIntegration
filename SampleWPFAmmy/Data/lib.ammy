@@ -52,16 +52,7 @@ mixin Cell (row = none, column = none, rowSpan = none, columnSpan = none) for Fr
   Grid.RowSpan: $rowSpan
   Grid.ColumnSpan: $columnSpan
 }
-/*
-alias ImageCached(source) {
-  Image {    
-    Source: BitmapImage {
-      UriCachePolicy: "Revalidate"
-      UriSource: $source
-    }
-  }
-}
-*/
+
 mixin Setter(property, value, targetName=none) for Style {
   Setter { Property: $property, Value: $value, TargetName: $targetName }
 }
@@ -231,4 +222,8 @@ mixin Fade_OnBinding(binding, bindingValue) for Style {
       #Setter("Visibility", "Hidden")
     }
   ]
+}
+
+mixin MergeDictionary (source) for ResourceDictionary {
+  combine MergedDictionaries: ResourceDictionary { Source: $source }
 }

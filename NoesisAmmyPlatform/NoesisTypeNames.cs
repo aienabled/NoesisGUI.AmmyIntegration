@@ -1,11 +1,7 @@
-namespace NoesisAmmyBackend
+using Ammy.Platforms;
+
+namespace NoesisAmmyPlatform
 {
-	#region
-
-	using Ammy.BackendCommon;
-
-	#endregion
-
 	internal class NoesisTypeNames : PlatformTypeNames
 	{
 		public static readonly NoesisTypeNames Instance = new NoesisTypeNames();

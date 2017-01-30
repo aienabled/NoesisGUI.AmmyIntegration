@@ -1,29 +1,25 @@
-﻿namespace NoesisAmmyBackend
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Ammy;
+using Ammy.Platforms;
+
+namespace NoesisAmmyPlatform
 {
-	#region
-
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
-	using Ammy;
-	using Ammy.BackendCommon;
-
-	#endregion
-
-	public class NoesisAmmyBackend : IAmmyBackend
+	public class NoesisAmmyPlatform : IAmmyPlatform
 	{
-		public NoesisAmmyBackend()
+		private readonly Host _host;
+
+		public NoesisAmmyPlatform()
 		{
-			Host.InitializeHost(this);
+			_host = new Host(this);
 		}
 
-		public IAmmyCompiler Compiler { get; set; }
-
 		public string[] DefaultNamespaces => new[] { "Noesis" };
-
-		public bool NeedRuntimeUpdate => false;
-	    public PlatformTypeNames PlatformTypeNames => NoesisTypeNames.Instance;
+		public bool SupportsRuntimeUpdate => false;
+		
+		public PlatformTypeNames PlatformTypeNames => NoesisTypeNames.Instance;
 
 		public Type[] ProvideTypes()
 		{
@@ -40,8 +36,9 @@
 			                             .ToArray();
 
 			var compilationRequest = new CompilationRequest(sources);
+			
+			var result = _host.Compile(compilationRequest);
 
-			var result = this.Compiler.Compile(compilationRequest);
 			if (result.IsSuccess)
 			{
 				this.GenerateFiles(result.Files, rootPath, outputDataPath);

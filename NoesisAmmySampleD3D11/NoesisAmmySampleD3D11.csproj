@@ -56,6 +56,14 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ammy.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ammy.Host.1.1.29\lib\net40\Ammy.Host.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ammy.Platforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b894af87bde57ba, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ammy.Host.1.1.29\lib\net40\Ammy.Platforms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NoesisManaged">
       <HintPath>..\NoesisGUI-SDK\Bin\NoesisManaged.dll</HintPath>
     </Reference>
@@ -96,11 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NoesisAmmyBackend\NoesisAmmyBackend.csproj">
-      <Project>{8635366C-2AFF-4BA7-B4D8-DE6682C37099}</Project>
-      <Name>NoesisAmmyBackend</Name>
+    <ProjectReference Include="..\NoesisAmmyPlatform\NoesisAmmyPlatform.csproj">
+      <Project>{8635366c-2aff-4ba7-b4d8-de6682c37099}</Project>
+      <Name>NoesisAmmyPlatform</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
