@@ -101,8 +101,6 @@
     </EmbeddedResource>
     <None Include="Data\Loader.ammy" />
     <None Include="Data\lib.ammy" />
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
