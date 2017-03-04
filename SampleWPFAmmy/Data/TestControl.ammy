@@ -19,7 +19,7 @@
 		VerticalAlignment: Center
 		
 		TextBlock {
-			Text: "Ammy works! Noesis works! Hallelujah!"
+			Text: "Everything integrated successfully :-)"
 			HorizontalAlignment: Center			
 		}
 

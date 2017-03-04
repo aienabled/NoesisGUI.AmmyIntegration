@@ -2,13 +2,13 @@
 {
 	#region
 
-	using System;
-	using System.Drawing;
-	using System.Windows.Forms;
-	using global::SharpDX.Mathematics.Interop;
-	using IntegrationSampleDX11.SharpDX;
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+    using global::SharpDX.Mathematics.Interop;
+    using IntegrationSampleDX11.SharpDX;
 
-	#endregion
+    #endregion
 
 	public class D3D11AppWrapper : Direct3D11DemoApp
 	{

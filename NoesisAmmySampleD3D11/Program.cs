@@ -2,18 +2,21 @@
 {
 	#region
 
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Windows.Forms;
-	using IntegrationSampleDX11.NoesisHelpers;
-	using IntegrationSampleDX11.SharpDX;
-	using Noesis;
-	using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
-	using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
-	using View = Noesis.View;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Windows.Forms;
+    using IntegrationSampleDX11.NoesisHelpers;
+    using IntegrationSampleDX11.SharpDX;
+    using Noesis;
+    using NoesisAmmyPlatform;
+    using SampleData;
+    using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
+    using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
+    using Path = System.IO.Path;
+    using View = Noesis.View;
 
-	#endregion
+    #endregion
 
 	public static class Program
 	{
@@ -218,16 +221,16 @@
 		private static void Run()
 		{
 			ammyDataPath =
-				System.IO.Path.GetFullPath(
-					System.IO.Path.Combine(
+				Path.GetFullPath(
+					Path.Combine(
 						Environment.CurrentDirectory,
 						@"..\..\..\SampleWPFAmmy\Data"))
-				+ System.IO.Path.DirectorySeparatorChar;
+				+ Path.DirectorySeparatorChar;
 
-			xamlDataPath = System.IO.Path.Combine(
-				               System.IO.Path.GetTempPath(),
-				               System.IO.Path.GetRandomFileName())
-			               + System.IO.Path.DirectorySeparatorChar;
+			xamlDataPath = Path.Combine(
+				               Path.GetTempPath(),
+				               Path.GetRandomFileName())
+			               + Path.DirectorySeparatorChar;
 
 			// Prepare and run D3D11 wrapper
 			var configuration = new DemoConfiguration("NoesisGUI Ammy Integration Sample", 800, 600);
@@ -286,7 +289,7 @@
 		private static void ReloadNoesisGUIView()
 		{
 			// create new ammy backed
-			var ammyPlatform = new NoesisAmmyPlatform.NoesisAmmyPlatform();
+			var ammyPlatform = new NoesisAmmyPlatform();
 			// collect file paths for compilation
 			var sourceFilePaths = CollectAmmyFilePaths(ammyDataPath);
 
@@ -309,14 +312,14 @@
 			renderer?.Shutdown();
 			
 			// create new view
-			var loader = new SampleData.Loader();
+			var loader = new Loader();
 			var content = loader;
-			view = Noesis.GUI.CreateView(content);
+			view = GUI.CreateView(content);
 
 			// init new view renderer
 			var immediateContext = dxWrapper.Device.ImmediateContext;
 			renderer = view.Renderer;
-			renderer.InitD3D11(immediateContext.NativePointer, new Noesis.VGOptions());
+			renderer.InitD3D11(immediateContext.NativePointer, new VGOptions());
 
 			isRequiredToReloadNoesisGUI = false;
 

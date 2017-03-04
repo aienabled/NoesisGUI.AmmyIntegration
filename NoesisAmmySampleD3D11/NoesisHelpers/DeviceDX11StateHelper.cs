@@ -2,13 +2,12 @@
 {
 	#region
 
-	using global::SharpDX;
-	using global::SharpDX.Direct3D;
-	using global::SharpDX.Direct3D11;
-	using global::SharpDX.DXGI;
-	using global::SharpDX.Mathematics.Interop;
+    using global::SharpDX.Direct3D;
+    using global::SharpDX.Direct3D11;
+    using global::SharpDX.DXGI;
+    using global::SharpDX.Mathematics.Interop;
 
-	#endregion
+    #endregion
 
 	/// <summary>
 	/// This helper provide methods for saving and restoring DX11 graphics device state
@@ -46,7 +45,7 @@
 
 		private int sampleMaskRef;
 
-		private Rectangle[] scissorRectangles;
+		private RawRectangle[] scissorRectangles;
 
 		private int stencilRefRef;
 
@@ -114,7 +113,7 @@
 			if (this.rasterizerState != null
 			    && this.rasterizerState.Description.IsScissorEnabled)
 			{
-				this.scissorRectangles = context.Rasterizer.GetScissorRectangles<Rectangle>();
+				this.scissorRectangles = context.Rasterizer.GetScissorRectangles<RawRectangle>();
 			}
 			this.blendState = context.OutputMerger.GetBlendState(out this.blendFactor, out this.sampleMaskRef);
 			this.depthState = context.OutputMerger.GetDepthStencilState(out this.stencilRefRef);

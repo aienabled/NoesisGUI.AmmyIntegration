@@ -2,11 +2,11 @@
 {
 	#region
 
-	using System;
-	using System.Windows.Forms;
-	using Noesis;
+    using System;
+    using System.Windows.Forms;
+    using Noesis;
 
-	#endregion
+    #endregion
 
 	internal static class NoesisInputHelper
 	{

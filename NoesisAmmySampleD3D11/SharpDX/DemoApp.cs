@@ -2,12 +2,12 @@ namespace IntegrationSampleDX11.SharpDX
 {
 	#region
 
-	using System;
-	using System.Drawing;
-	using System.Windows.Forms;
-	using global::SharpDX.Windows;
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+    using global::SharpDX.Windows;
 
-	#endregion
+    #endregion
 
 	/// <summary>
 	/// Root clas for a Demo Application

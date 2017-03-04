@@ -2,16 +2,14 @@
 {
 	#region
 
-	using System;
-	using System.Windows.Forms;
-	using global::SharpDX;
-	using global::SharpDX.Direct3D;
-	using global::SharpDX.Direct3D11;
-	using global::SharpDX.DXGI;
-	using Device = global::SharpDX.Direct3D11.Device;
-	using Resource = global::SharpDX.Direct3D11.Resource;
+    using System;
+    using System.Windows.Forms;
+    using global::SharpDX.Direct3D;
+    using global::SharpDX.Direct3D11;
+    using global::SharpDX.DXGI;
+    using Device = global::SharpDX.Direct3D11.Device;
 
-	#endregion
+    #endregion
 
 	/// <summary>
 	/// Root class for Direct3D10(.1) Demo App
@@ -46,7 +44,7 @@
 		protected override void BeginDraw()
 		{
 			base.BeginDraw();
-			this.Device.ImmediateContext.Rasterizer.SetViewport(new Viewport(0, 0, this.Config.Width, this.Config.Height));
+			this.Device.ImmediateContext.Rasterizer.SetViewport(0, 0, this.Config.Width, this.Config.Height);
 			this.Device.ImmediateContext.OutputMerger.SetTargets(this.backBufferView);
 		}
 
@@ -58,7 +56,7 @@
 		protected override void Initialize(DemoConfiguration demoConfiguration)
 		{
 			// SwapChain description
-			var desc = new SwapChainDescription()
+			var desc = new SwapChainDescription
 			{
 				BufferCount = 1,
 				ModeDescription = new ModeDescription(
@@ -110,14 +108,14 @@
 				return;
 			}
 
-			device.ImmediateContext.ClearState();
+		    this.device.ImmediateContext.ClearState();
 			this.DestroyBackBuffer();
 
 			var desc = this.SwapChain.Description;
 			this.SwapChain.ResizeBuffers(desc.BufferCount, size.Width, size.Height, Format.Unknown, SwapChainFlags.AllowModeSwitch);
 
-			demoConfiguration.Width = size.Width;
-			demoConfiguration.Height = size.Height;
+		    this.demoConfiguration.Width = size.Width;
+		    this.demoConfiguration.Height = size.Height;
 
 			this.CreateBackBuffer();
 		}
@@ -130,7 +128,7 @@
 
 		private void CreateBackBuffer()
 		{
-			this.backBuffer = Resource.FromSwapChain<Texture2D>(this.swapChain, 0);
+			this.backBuffer = global::SharpDX.Direct3D11.Resource.FromSwapChain<Texture2D>(this.swapChain, 0);
 			this.backBufferView = new RenderTargetView(this.device, this.backBuffer);
 		}
 	}

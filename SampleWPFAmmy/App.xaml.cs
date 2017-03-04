@@ -2,9 +2,9 @@
 {
 	#region
 
-	using System.Windows;
+    using System.Windows;
 
-	#endregion
+    #endregion
 
 	/// <summary>
 	/// Interaction logic for App.xaml

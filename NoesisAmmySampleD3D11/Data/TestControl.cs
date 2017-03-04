@@ -2,9 +2,9 @@ namespace SampleData
 {
 	#region
 
-	using Noesis;
+    using Noesis;
 
-	#endregion
+    #endregion
 
 	#region
 

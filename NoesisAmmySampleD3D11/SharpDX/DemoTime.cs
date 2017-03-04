@@ -2,9 +2,9 @@
 {
 	#region
 
-	using System.Diagnostics;
+    using System.Diagnostics;
 
-	#endregion
+    #endregion
 
 	public class DemoTime
 	{

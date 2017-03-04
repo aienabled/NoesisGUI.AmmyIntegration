@@ -26,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\</OutputPath>
@@ -57,31 +58,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ammy.Host, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ammy.Host.1.1.29\lib\net40\Ammy.Host.dll</HintPath>
+      <HintPath>..\packages\Ammy.Host.1.2.13\lib\net40\Ammy.Host.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ammy.Platforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b894af87bde57ba, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ammy.Host.1.1.29\lib\net40\Ammy.Platforms.dll</HintPath>
+      <HintPath>..\packages\Ammy.Host.1.2.13\lib\net40\Ammy.Platforms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NoesisManaged">
       <HintPath>..\NoesisGUI-SDK\Bin\NoesisManaged.dll</HintPath>
     </Reference>
-    <Reference Include="SharpDX">
-      <HintPath>..\NoesisGUI-SDK\Samples\SharpDXLibs\SharpDX.dll</HintPath>
+    <Reference Include="SharpDX, Version=3.1.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.3.1.1\lib\net45\SharpDX.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="SharpDX.Desktop">
-      <HintPath>..\NoesisGUI-SDK\Samples\SharpDXLibs\SharpDX.Desktop.dll</HintPath>
+    <Reference Include="SharpDX.Desktop, Version=3.1.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Desktop.3.1.1\lib\net45\SharpDX.Desktop.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="SharpDX.Direct3D11">
-      <HintPath>..\NoesisGUI-SDK\Samples\SharpDXLibs\SharpDX.Direct3D11.dll</HintPath>
+    <Reference Include="SharpDX.Direct3D11, Version=3.1.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D11.3.1.1\lib\net45\SharpDX.Direct3D11.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="SharpDX.DXGI, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\NoesisGUI-SDK\Samples\SharpDXLibs\SharpDX.DXGI.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Mathematics">
-      <HintPath>..\NoesisGUI-SDK\Samples\SharpDXLibs\SharpDX.Mathematics.dll</HintPath>
+    <Reference Include="SharpDX.DXGI, Version=3.1.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DXGI.3.1.1\lib\net45\SharpDX.DXGI.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

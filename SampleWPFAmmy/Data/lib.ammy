@@ -53,6 +53,16 @@ mixin Cell (row = none, column = none, rowSpan = none, columnSpan = none) for Fr
   Grid.ColumnSpan: $columnSpan
 }
 
+// not supported in NoesisGUI
+//alias ImageCached(source) {
+//  Image {    
+//    Source: BitmapImage {
+//      UriCachePolicy: "Revalidate"
+//      UriSource: $source
+//    }
+//  }
+//}
+
 mixin Setter(property, value, targetName=none) for Style {
   Setter { Property: $property, Value: $value, TargetName: $targetName }
 }
