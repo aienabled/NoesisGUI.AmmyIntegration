@@ -1,13 +1,13 @@
 NoesisGUI Ammy Integration
 =============
-This library provides solution for integration [NoesisGUI v1.3+](http://noesisengine.com) with [Ammy](http://ammyui.com) library.
+This library provides solution for integration [NoesisGUI v2.0+](http://noesisengine.com) with [Ammy](http://ammyui.com) library.
 Currently it provides only building feature - it builds `.ammy` files to `XAML` files for loading them in NoesisGUI.
 Building `XAML` files is implemented at `NoesisAmmyBackend` project.
 A sample project based on SharpDX is included (Windows only, Direct3D 11, based on NoesisGUI sample). It demonstrates how to use `NoesisAmmyBackend`, it will automatically rebuild `XAML` files when any `.ammy` file is changed and reload NoesisGUI after that.
 
 Prerequisites
 -----
-* [Visual Studio 2013 or 2015](https://www.visualstudio.com/), any edition will be fine.
+* [Visual Studio 2013/2015/2017](https://www.visualstudio.com/), any edition will be fine.
 
 Installation
 -----
